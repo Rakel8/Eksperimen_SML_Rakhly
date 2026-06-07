@@ -33,5 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cleaned-dataset
-          # Pastikan path ini sesuai dengan tempat scriptmu menyimpan hasil CSV
           path: preprocessing/loan_data_preprocessing/
