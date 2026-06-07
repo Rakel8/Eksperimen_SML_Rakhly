@@ -46,7 +46,7 @@ def run_preprocessing(input_path, output_path):
 
 if __name__ == "__main__":
     # Menentukan lokasi file mentah dan lokasi tujuan file bersih
-    RAW_DATA_PATH = "/home/rakel/00_SCHOOL/ANTIGRAVITY/DICODING/SMSML_Rakhly Arief Putranto apc222d6y0414/dataset_raw/loan_approval_dataset.csv"
+    RAW_DATA_PATH = "dataset_raw/loan_approval_dataset.csv"
     CLEAN_DATA_PATH = "loan_data_preprocessing/loan_data_clean.csv"
     
     run_preprocessing(RAW_DATA_PATH, CLEAN_DATA_PATH)
