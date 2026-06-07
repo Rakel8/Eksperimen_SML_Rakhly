@@ -1,0 +1,37 @@
+name: Data Preprocessing Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  preprocess-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas scikit-learn
+
+      - name: Run Automate Script
+        run: |
+          # Menjalankan script preprocessing dari dalam folder preprocessing
+          cd preprocessing
+          python automate_Rakhly.py
+
+      - name: Upload Processed Dataset as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cleaned-dataset
+          # Pastikan path ini sesuai dengan tempat scriptmu menyimpan hasil CSV
+          path: preprocessing/loan_data_preprocessing/
